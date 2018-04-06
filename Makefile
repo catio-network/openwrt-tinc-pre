@@ -39,6 +39,7 @@ TARGET_CFLAGS += -std=gnu99
 
 CONFIGURE_ARGS += \
 	--disable-readline \
+	--disable-curses \
 	--with-kernel="$(LINUX_DIR)" \
 	--with-lzo-include="$(STAGING_DIR)/usr/include/lzo" \
 	--with-zlib="$(STAGING_DIR)/usr"
