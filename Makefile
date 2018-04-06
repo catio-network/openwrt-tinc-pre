@@ -38,6 +38,7 @@ endef
 TARGET_CFLAGS += -std=gnu99
 
 CONFIGURE_ARGS += \
+	--disable-readline \
 	--with-kernel="$(LINUX_DIR)" \
 	--with-lzo-include="$(STAGING_DIR)/usr/include/lzo" \
 	--with-zlib="$(STAGING_DIR)/usr"
@@ -53,9 +54,9 @@ define Package/tinc-pre/install
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/tinc $(1)/usr/sbin/
 	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/usr/sbin/tincd $(1)/usr/sbin/
 	$(INSTALL_DIR) $(1)/etc/init.d/
-	$(INSTALL_BIN) files/$(PKG_NAME).init $(1)/etc/init.d/$(PKG_NAME)
+	$(INSTALL_BIN) files/tinc.init $(1)/etc/init.d/tinc
 	$(INSTALL_DIR) $(1)/etc/config
-	$(INSTALL_CONF) files/$(PKG_NAME).config $(1)/etc/config/$(PKG_NAME)
+	$(INSTALL_CONF) files/tinc.config $(1)/etc/config/tinc
 	$(INSTALL_DIR) $(1)/etc/tinc
 	$(INSTALL_DIR) $(1)/lib/upgrade/keep.d
 	$(INSTALL_DATA) files/tinc.upgrade $(1)/lib/upgrade/keep.d/tinc
