@@ -11,6 +11,7 @@ PKG_NAME:=tinc-pre
 PKG_VERSION:=1.1pre15
 PKG_RELEASE:=1
 
+PKG_BUILD_DIR:=$(BUILD_DIR)/tinc-$(PKG_VERSION)
 PKG_SOURCE:=tinc-$(PKG_VERSION).tar.gz
 PKG_SOURCE_URL:=https://www.tinc-vpn.org/packages
 PKG_HASH:=64fb5847ccc7a1b35975af3eb981f727
